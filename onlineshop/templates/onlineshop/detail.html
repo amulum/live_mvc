@@ -1,0 +1,34 @@
+{%extends 'base.html'%}
+{%block title%}Detail Product {{product.name}}{%endblock%}
+
+{%block content%}
+<div class="wrap-product--detail">
+    <div class="container-fluid d-flex justify-content-center">
+        <div class="wrap-product_specify">
+            <div class="product-image">
+                <img src="{{product.image_path}}" alt="">
+            </div>
+            <div class="product-name">
+                {{product.name}}
+            </div>
+            <div class="product-price">
+                {{product.price}}
+            </div>
+            <!-- product description -->
+            <div class="wrap-pro--desc">
+                <div class="pro-desc--text">
+                    Deskripsi Product
+                </div>
+                <div class="pro-desc--list">
+                    <ul>
+                        {%for desc in list_desc%}
+                        <li>{{ desc }}</li>
+                        {%endfor%}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    
+</div>
+
+{%endblock%}
